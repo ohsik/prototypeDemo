@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard v2 prototype</title>
+    <link href='https://fabfitfun.github.io/fabfitfun-theme-style-guide/css/style.css' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Muli:300,400" rel="stylesheet">
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  </head>
+  <style>
+    .container{
+      max-width: 1440px;
+    }
+    img{
+      max-width: 100%;
+    }
+    .loading_card{
+      background: #f7f7f7;
+    }
+    /* Content place load */
+    .timeline-item {
+        border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+        border-radius: 3px;
+        padding: 12px;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+    @keyframes placeHolderShimmer{
+        0%{
+            background-position: -468px 0
+        }
+        100%{
+            background-position: 468px 0
+        }
+    }
+
+    @-webkit-keyframes sideUp {
+      0%   {
+        bottom: -20px;
+        opacity: 0;
+      }
+      100% {
+        bottom: 0px;
+        opacity: 1;
+      }
+    }
+    @keyframes sideUp {
+      0%   {
+        bottom: -20px;
+        opacity: 0;
+      }
+      100% {
+        bottom: 0px;
+        opacity: 1;
+      }
+    }
+    .content_animation{
+      opacity: 0;
+      position: relative;
+    }
+
+    .showContent{
+      -webkit-animation-name: sideUp;
+      -webkit-animation-duration: 0.4s;
+      animation-name: sideUp;
+      animation-duration: 0.4s;
+      opacity: 1;
+      animation-timing-function: ease-in;
+    }
+
+
+    .animated-background {
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-name: placeHolderShimmer;
+        animation-timing-function: linear;
+        background: #f6f7f8;
+        background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+        background-size: 800px 104px;
+        height: 60px;
+        position: relative;
+    }
+    .background-masker {
+        background: #fff;
+        position: absolute;
+    }
+    .background-masker.header-top,
+    .background-masker.header-top-right,
+    .background-masker.header-bottom-right,
+    .background-masker.header-middle,
+    .background-masker.header-bottom{
+        top: 12px;
+        left: 0;
+        right: 0;
+        height: 12px;
+    }
+    .background-masker.header-middle{
+        top: 36px;
+    }
+    .background-masker.header-top-right{
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 40%;
+    }
+    .background-masker.header-bottom-right{
+        top: 48px;
+        right: 0;
+        left: auto;
+        width: 20%;
+    }
+    .canvas-wrap {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      display: inline-block;
+      margin-left: 400px;
+      top: 16px;
+    }
+  </style>
+
+  <body>
+
+    <div id="content_loading">
+      <header class="t-c">
+        <div class="row meta_nav" style="background: #F4F4F4;">
+          <div class="col container">
+            <img src="images/meta_nav.png" />
+          </div>
+        </div>
+        <div class="row main_nav">
+          <div class="col container">
+            <img src="images/main_nav.png" />
+          </div>
+        </div>
+      </header>
+
+      <div class="row container">
+        <div style="margin: 0 auto; padding: 20px;">
+
+          <div style="display: inline-block; width: 260px;">
+            <!-- Content placeholder load -->
+            <div class="timeline-item">
+              <div class="animated-background facebook" style="width: 240px; height: 240px; border-radius: 50%; position: relative;">
+                <div style="width: 200px; height: 200px; border-radius: 50%; position: absolute; background: rgba(255, 255, 255, 0.1); top: 20px; left: 20px;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="display: inline-block; width: 340px;">
+            <!-- Content placeholder load -->
+            <div class="timeline-item" style="height: 180px;">
+              <div class="animated-background facebook">
+                <div class="background-masker header-top"></div>
+                <div class="background-masker header-top-right"></div>
+                <div class="background-masker header-middle"></div>
+                <div class="background-masker header-bottom"></div>
+                <div class="background-masker header-bottom-right"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row t-c" style="background: #f7f7f7; padding: 80px 0;">
+        <div class="col container">
+
+          <div class="timeline-item">
+            <div class="animated-background facebook">
+              <div class="background-masker header-top" style="background: #f7f7f7;"></div>
+              <div class="background-masker header-top-right" style="background: #f7f7f7;"></div>
+              <div class="background-masker header-middle" style="background: #f7f7f7;"></div>
+              <div class="background-masker header-bottom" style="background: #f7f7f7;"></div>
+              <div class="background-masker header-bottom-right" style="background: #f7f7f7;"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row container" style="max-width: 1200px; padding: 40px 0; border-top: 1px solid #f7f7f7;">
+        <div class="col ">
+          <!-- Content placeholder load -->
+          <div class="timeline-item">
+            <div class="animated-background facebook" style="width: 240px; height: 240px;"></div>
+          </div>
+          <div class="timeline-item" style="height: 100px; padding-top: 0;">
+            <div class="animated-background facebook">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-top-right"></div>
+              <div class="background-masker header-middle"></div>
+              <div class="background-masker header-bottom"></div>
+              <div class="background-masker header-bottom-right"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col ">
+          <!-- Content placeholder load -->
+          <div class="timeline-item">
+            <div class="animated-background facebook" style="width: 240px; height: 240px;"></div>
+          </div>
+          <div class="timeline-item" style="height: 100px; padding-top: 0;">
+            <div class="animated-background facebook">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-top-right"></div>
+              <div class="background-masker header-middle"></div>
+              <div class="background-masker header-bottom"></div>
+              <div class="background-masker header-bottom-right"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col ">
+          <!-- Content placeholder load -->
+          <div class="timeline-item">
+            <div class="animated-background facebook" style="width: 240px; height: 240px;"></div>
+          </div>
+          <div class="timeline-item" style="height: 100px; padding-top: 0;">
+            <div class="animated-background facebook">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-top-right"></div>
+              <div class="background-masker header-middle"></div>
+              <div class="background-masker header-bottom"></div>
+              <div class="background-masker header-bottom-right"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col ">
+          <!-- Content placeholder load -->
+          <div class="timeline-item">
+            <div class="animated-background facebook" style="width: 240px; height: 240px;"></div>
+          </div>
+          <div class="timeline-item" style="height: 100px; padding-top: 0;">
+            <div class="animated-background facebook">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-top-right"></div>
+              <div class="background-masker header-middle"></div>
+              <div class="background-masker header-bottom"></div>
+              <div class="background-masker header-bottom-right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Main content starts here
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------>
+    <div id="main_content">
+      <header class="t-c">
+        <div class="row meta_nav" style="background: #F4F4F4;">
+          <div class="col container">
+            <img src="images/meta_nav.png" />
+          </div>
+        </div>
+        <div class="row main_nav">
+          <div class="col container">
+            <img src="images/main_nav.png" />
+          </div>
+        </div>
+      </header>
+
+      <div class="row content_animation" id="load_0">
+        <div class="col container">
+          <div class="canvas-wrap">
+            <canvas id="canvas" width="300" height="300"></canvas>
+            <span id="procent"></span>
+          </div>
+          <img src="images/tracker.png" />
+        </div>
+      </div>
+
+      <div class="row t-c content_animation" style="background: #c6b4a6;" id="load_1">
+        <div class="col container">
+          <img src="images/promotion_banner.png" style="margin-bottom: -6px;" />
+        </div>
+      </div>
+
+      <div class="row t-c content_animation" id="load_2">
+        <div class="col container">
+          <p>
+            <img src="images/shop.png" />
+          </p>
+        </div>
+      </div>
+
+      <div class="row t-c content_animation" style="background: #F7F7F7;" id="load_3">
+        <div class="col container">
+          <img src="images/magazine.png" />
+        </div>
+      </div>
+
+      <div class="row t-c content_animation" id="load_4">
+        <div class="col container">
+          <img src="images/video.png" />
+        </div>
+      </div>
+
+      <div class="row t-c content_animation" style="background: #F7F7F7;" id="load_5">
+        <div class="col container">
+          <img src="images/community.png" />
+        </div>
+      </div>
+
+      <div class="row t-c content_animation" id="load_6">
+        <div class="col container">
+          <img src="images/footer_top.png" />
+        </div>
+      </div>
+
+      <div class="row t-c content_animation" style="border-top: 1px solid #eeeeee;" id="load_7">
+        <div class="col container">
+          <img src="images/footer_bottom.png" />
+        </div>
+      </div>
+
+      <div class="row t-c" style="background: #f7f7f7;">
+        <div class="col container">
+          <img src="images/footer_copyright.png" />
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+    window.onload = function() {
+      var can = document.getElementById('canvas'),
+           c = can.getContext('2d');
+
+      var posX = can.width / 2,
+          posY = can.height / 2,
+          fps = 1000 / 200,
+          procent = 0,
+          oneProcent = 360 / 100,
+          result = oneProcent * 40;
+
+      c.lineCap = 'round';
+      setTimeout(function() {
+        arcMove();
+      }, 2500);
+
+      function arcMove(){
+        var deegres = 0;
+        var acrInterval = setInterval (function() {
+          deegres += 1;
+          c.clearRect( 0, 0, can.width, can.height );
+          procent = deegres / oneProcent;
+
+          c.beginPath();
+          c.arc( posX, posY, 120, (Math.PI/180) * 270, (Math.PI/180) * (270 + 360) );
+          c.strokeStyle = '#eeeeee';
+          c.lineWidth = '20';
+          c.stroke();
+
+          c.beginPath();
+          c.strokeStyle = '#CEACC7';
+          c.lineWidth = '20';
+          c.arc( posX, posY, 120, (Math.PI/180) * 270, (Math.PI/180) * (270 + deegres) );
+          c.stroke();
+          if( deegres >= result ) clearInterval(acrInterval);
+        }, fps);
+
+      }
+    }
+
+    $( document ).ready(function() {
+      $('#main_content').hide();
+
+      setTimeout(function() {
+          $('#content_loading').hide();
+          $('#main_content').show();
+
+          var x = 0;
+          function setIntervalX(callback, delay, repetitions) {
+            var intervalID = window.setInterval(function () {
+               callback();
+               if (++x === repetitions) {
+                  window.clearInterval(intervalID);
+               }
+            }, delay);
+          }
+
+          setIntervalX(function () {
+            $('#load_' + x).addClass('showContent');
+          }, 100, 8);
+
+       }, 2000);
+    });
+
+    </script>
+  </body>
+</html>
